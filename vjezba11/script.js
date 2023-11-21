@@ -51,10 +51,46 @@ const Pavle = godRodjenja2(2001);
 
 console.log(Jura, Pavle);
 
-const godineDoMirovine = (godina) => {
+const godineDoMirovine = (godina, ime) => {
   const starost = 2023 - godina;
   const mirovina = 65 - starost;
-  return mirovina;
+  if (mirovina > 0) {
+    console.log(`${ime} će se umiroviti za ${mirovina} godina`);
+    return mirovina;
+  } else {
+    return;
+  }
 };
 
-console.log(godineDoMirovine(2000));
+console.log(godineDoMirovine(2000, "Igor"));
+
+// ----------------------------------------------------------------------------------------------------
+
+/* Lokalno možemo definirati varijablu koju smo već globalno zadali, jer su varijable unutar funkcije ograničene sa samom funkcijom
+i nisu nam dostupne van funkcije (ovo vrijedi za const, let i var). Međutim ako smo varijablu već globalno definirali, ona će nam biti
+dostupna unutar funkcije i možemo upotrijebiti njenu vrijednost, ali ako postoji unutar funkcije identična varijabla sa drugom
+vrijednosti, ta (lokalna) varijabla će imati prednost i funkcija će koristiti njenu vrijednost. */
+const x = 100;
+
+function lokalna() {
+  const y = 50;
+  const x = 30;
+  var z = 40;
+  console.log(x, y);
+}
+
+lokalna();
+
+function komadiVoca(voce) {
+  return voce * 4;
+}
+
+function nutriBulletPrimjer(jabuke, kruske) {
+  const komadiJabuke = komadiVoca(jabuke);
+  const komadiKruske = komadiVoca(kruske);
+
+  const sok = `Sok od ${komadiJabuke} dijelova jabuke i ${komadiKruske} dijelova kruške.`;
+  return sok;
+}
+
+console.log(nutriBulletPrimjer(2, 3));
