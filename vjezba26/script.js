@@ -57,3 +57,54 @@ const kreirajZadatak2 = (zadatak) => {
 };
 
 kreirajZadatak2("Kupi sličice");
+
+// Idemo to još malo refaktorirati da bude reusable...
+
+function kreirajZadatak3(zadatak) {
+  const li = document.createElement("li");
+  li.className = "pojedinacni-zadatak";
+  li.appendChild(document.createTextNode(zadatak));
+
+  const button = napraviButton("ukloni-zadatak btn-link");
+  li.appendChild(button);
+  document.querySelector(".zadatak").appendChild(li);
+}
+
+function napraviButton(klase) {
+  const button = document.createElement("button");
+  button.className = klase;
+
+  const ikona = napraviIkonu("fa-solid fa-xmark");
+  button.appendChild(ikona);
+  return button;
+}
+
+function napraviIkonu(klase) {
+  const ikona = document.createElement("i");
+  ikona.className = klase;
+  return ikona;
+}
+
+kreirajZadatak3("Operi suđe");
+
+// ----------------------------------------------------------------------------------------------------------------
+
+/* InsertAdjacentElement metoda - ubacuje HTML element sa sadržajem kojeg postavimo. */
+
+function ubaciElement() {
+  const filter = document.querySelector(".filter"); // dohvaćamo filter klasu (element koji ima tu klasu)
+
+  // Napravit ćemo element i ubacit sadržaj u taj element
+
+  const p = document.createElement("p");
+  p.textContent = "Tekst koji je ubačen";
+
+  /*  filter.insertAdjacentElement("beforebegin", p); */ // ubacuje sadržaj prije selektiranog elementa
+  /* filter.insertAdjacentElement("afterbegin", p); */ // ubacuje sadržaj kao prvi podelement selektiranog elementa
+  /* filter.insertAdjacentElement("beforeend", p); */ // ubacuje sadržaj kao zadnji podelement selektiranog elementa
+  filter.insertAdjacentElement("afterend", p); // ubacuje sadržaj odmah poslije selektiranog elementa
+}
+
+ubaciElement();
+
+// insertBefore, insertAdjacentHTML, insertAdjacentText
