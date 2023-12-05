@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #333;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+header h1 {
+  font-weight: 300;
+  margin-left: 1rem;
+}
+
+/* Forma */
+.form-input {
+  width: 100%;
+  font-size: 1.8rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form-input-filter {
+  margin-top: 2rem;
+  width: 100%;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  outline: none;
+}
+
+/* Gumbići */
+.btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #444;
+}
+
+.btn-link {
+  font-size: 1.6rem;
+  background-color: transparent;
+  color: #333;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-clear {
+  margin: 2rem auto;
+  display: block;
+  font-size: 1.6rem;
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.btn-clear:hover {
+  background-color: #f1f1f1;
+}
+
+.fa-xmark {
+  color: red;
+}
+
+/* Taskovi */
+
+.zadatak {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.zadatak li {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: calc(50% - 1rem);
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .zadatak li {
+    width: 100%;
+  }
+}
