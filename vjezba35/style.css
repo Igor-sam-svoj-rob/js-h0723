@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  background: #333;
+  border: 0;
+  color: #fff;
+  padding: 15px 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.crvena {
+  background-color: red;
+}
