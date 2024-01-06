@@ -20,8 +20,8 @@
         </tr>
         {{#each pokemon}}
           <tr>
-            <td>{{@index}}</td>
-            <td>{{this.name}}</td>
+            <td>{{@indexPlusJedan}}</td>
+            <td><a href="{{this.url}}">{{this.name}}</a></td>
           </tr>
         {{/each}}
       </table>
